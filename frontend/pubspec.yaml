@@ -1,0 +1,53 @@
+name: chess
+description: "A new Flutter project."
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.3.4 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  provider: ^6.1.2
+  web_socket_channel: ^3.0.1
+  flutter_svg: ^2.0.10+1 
+  flutter_local_notifications: ^17.2.2
+
+  cupertino_icons: ^1.0.6
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  
+
+  flutter_lints: ^3.0.0
+
+flutter:
+
+  uses-material-design: true
+
+  assets:
+    - assets/images/top_pattern.png
+    - assets/images/bottom_pattern.png
+    - assets/images/Bb.svg
+    - assets/images/Bw.svg
+    - assets/images/Kb.svg
+    - assets/images/Kw.svg
+    - assets/images/Nb.svg
+    - assets/images/Nw.svg
+    - assets/images/Pb.svg
+    - assets/images/Pw.svg
+    - assets/images/Qb.svg
+    - assets/images/Qw.svg
+    - assets/images/Rb.svg
+    - assets/images/Rw.svg
+
+  fonts:
+    - family: Lato
+      fonts:
+        - asset: assets/fonts/Lato-Regular.ttf
+    - family: CreteRound
+      fonts:
+        - asset: assets/fonts/CreteRound-Regular.ttf
