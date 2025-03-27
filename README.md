@@ -1,39 +1,53 @@
 # Chess
 
-The goal was to create an online chess game where users can invite other players for a match
-or join a wait room to start a game with random player. Users will also receive a notification
-if they don't have the app open and the opponent has made their move.
+## Description
 
-# Technologies
+Online chess game where users can invite other players for a match
+or join a wait room to start a game with random player.  
+Users will also receive a notification if they don't have the app open and the opponent has made their move.
+
+## Author
+
+Erik Hans Sepp (ehspp)
+
+## Technologies used
 
 Frontend:
+
 - Flutter
 - Dart
 - Provider
 
 Backend:
+
 - Go
 - Chess package (https://github.com/notnil/chess)
 
-# Audit questions
+Other:
 
-https://01.kood.tech/git/root/public/src/branch/master/subjects/mobile-dev/chess/audit
+- Websocket
 
-# Usage
+## Usage
 
-I've created a short demo video for the audit questions about using the app: https://youtu.be/bdeNOtwnBdo
+### Frontend:
 
-Frontend: 
-To run locally you need to have Flutter installed and first install dependencies, while in frontend folder:
+To run locally you need to have Flutter installed and first install dependencies, while in frontend folder:  
 `flutter pub get`
 
-Then you can run the app:
+Then you can run the app:  
 `flutter run`
 
-Backend:
-Move to backend folder:
+### Backend:
+
+In backend folder:  
 `go run .`
 
-# Author
+## Screenshots
 
-Erik Hans Sepp (ehspp)
+<img src="screenshots/1.png" width="350" /><br>
+<img src="screenshots/2.png" width="350" /><br>
+<img src="screenshots/3.png" width="350" /><br>
+<img src="screenshots/4.png" width="350" /><br>
+<img src="screenshots/5.png" width="350" /><br>
+<img src="screenshots/6.png" width="350" /><br>
+<img src="screenshots/7.png" width="350" /><br>
