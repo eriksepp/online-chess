@@ -29,14 +29,14 @@ void main() {
                 ),
                 ChangeNotifierProvider(
                   create: (context) => InvitationService(
-                    Provider.of<WebSocketService>(context, listen: false),
-                    Provider.of<PlayersService>(context, listen: false)),
+                      Provider.of<WebSocketService>(context, listen: false),
+                      Provider.of<PlayersService>(context, listen: false)),
                 ),
                 ChangeNotifierProvider(
                   create: (context) => GameService(
-                    Provider.of<WebSocketService>(context, listen: false),
-                    Provider.of<PlayersService>(context, listen: false),
-                    NotificationService()),
+                      Provider.of<WebSocketService>(context, listen: false),
+                      Provider.of<PlayersService>(context, listen: false),
+                      NotificationService()),
                 )
               ],
               child: MyApp(),
@@ -48,39 +48,33 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final webSocketService = Provider.of<WebSocketService>(context);
-    webSocketService.connect("ws://192.168.8.181:8080/main"); //TODO: What to do with IP for audit?
+    webSocketService.connect("ws://localhost:8080/main");
 
     return MaterialApp(
-      title: 'Chess',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      initialRoute: '/',
-      onGenerateRoute: (settings) {
-        switch (settings.name) {
-          case '/':
-            return MaterialPageRoute(builder: (_) => EnterNameView());
-          case '/menu':
-            return NoTransitionPageRoute(builder: (_) => MenuView());
-          case '/invitePlayer':
-            return NoTransitionPageRoute(builder: (_) => InvitePlayerView());
-          case '/waitRoom':
-            return NoTransitionPageRoute(builder: (_) => WaitRoomView());
-          case '/game':
-            return NoTransitionPageRoute(builder: (_) => GameView());
-          default:
-            return MaterialPageRoute(builder: (_) => EnterNameView());
-        }
-      },
-      builder: (context, child) {
-        return Stack(
-          children: [
-            child!,
-            InviteReceivedModal()
-          ]
-        );
-      }
-    );
+        title: 'Chess',
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+        ),
+        initialRoute: '/',
+        onGenerateRoute: (settings) {
+          switch (settings.name) {
+            case '/':
+              return MaterialPageRoute(builder: (_) => EnterNameView());
+            case '/menu':
+              return NoTransitionPageRoute(builder: (_) => MenuView());
+            case '/invitePlayer':
+              return NoTransitionPageRoute(builder: (_) => InvitePlayerView());
+            case '/waitRoom':
+              return NoTransitionPageRoute(builder: (_) => WaitRoomView());
+            case '/game':
+              return NoTransitionPageRoute(builder: (_) => GameView());
+            default:
+              return MaterialPageRoute(builder: (_) => EnterNameView());
+          }
+        },
+        builder: (context, child) {
+          return Stack(children: [child!, InviteReceivedModal()]);
+        });
   }
 }
 
